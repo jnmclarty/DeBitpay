@@ -6,4 +6,10 @@ export const htmlHowItWorks = `
     <li>DeBitpay shows a window with the data returned by the invoice url, structured and formatted for convenience. Bitcoin amount is calculated from satoshis data, QR Code image and Open In Wallet button are rendered from Address and Amount data, the rest data is shown as-is without modifications.</li>
   </ol>
   <p class="alert alert-info">Entered Invoice URL is the only external resource DeBitpay connects to. No analytics, no external scripts, etc.</p>
-`
+` <p>Equivalent cURL</p>
+  <p class="alert alert-info">curl -X GET http://bitpay.com/i/$BITPAYINVOICEID -H 'accept: application/payment-request'</p>
+  <p>Equivalent Python</p>
+  <p class="alert alert-info">from requests import get
+url = 'https://bitpay.com/i/BITPAYINVOICEID'
+resp = get(url, headers={'Accept' : 'application/payment-request'}).json()
+print(resp)</p>
